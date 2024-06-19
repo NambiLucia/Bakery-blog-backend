@@ -821,6 +821,32 @@ export interface ApiBrownieBrownie extends Schema.CollectionType {
   };
 }
 
+export interface ApiCakeCake extends Schema.CollectionType {
+  collectionName: 'cakes';
+  info: {
+    singularName: 'cake';
+    pluralName: 'cakes';
+    displayName: 'Cakerecipe';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    ingredients: Attribute.Text & Attribute.Required;
+    instructions: Attribute.Text & Attribute.Required;
+    optionalglaze: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::cake.cake', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::cake.cake', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHeroHero extends Schema.CollectionType {
   collectionName: 'heroes';
   info: {
@@ -896,6 +922,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::brownie.brownie': ApiBrownieBrownie;
+      'api::cake.cake': ApiCakeCake;
       'api::hero.hero': ApiHeroHero;
       'api::pastry.pastry': ApiPastryPastry;
     }

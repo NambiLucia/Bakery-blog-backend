@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cakes",
+  "info": {
+    "singularName": "cake",
+    "pluralName": "cakes",
+    "displayName": "Cakerecipe",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "ingredients": {
+      "type": "text",
+      "required": true
+    },
+    "instructions": {
+      "type": "text",
+      "required": true
+    },
+    "optionalglaze": {
+      "type": "text"
+    }
+  }
+}
