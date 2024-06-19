@@ -837,6 +837,8 @@ export interface ApiCakeCake extends Schema.CollectionType {
     ingredients: Attribute.Text & Attribute.Required;
     instructions: Attribute.Text & Attribute.Required;
     optionalglaze: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
