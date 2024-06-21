@@ -849,6 +849,74 @@ export interface ApiCakeCake extends Schema.CollectionType {
   };
 }
 
+export interface ApiChocolateChocolate extends Schema.CollectionType {
+  collectionName: 'chocolates';
+  info: {
+    singularName: 'chocolate';
+    pluralName: 'chocolates';
+    displayName: 'Chocolate';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    ingredients: Attribute.Text & Attribute.Required;
+    instructions: Attribute.Text & Attribute.Required;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::chocolate.chocolate',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::chocolate.chocolate',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCoffeeCoffee extends Schema.CollectionType {
+  collectionName: 'coffees';
+  info: {
+    singularName: 'coffee';
+    pluralName: 'coffees';
+    displayName: 'Coffee';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    ingredients: Attribute.Text & Attribute.Required;
+    instructions: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::coffee.coffee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::coffee.coffee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCookieCookie extends Schema.CollectionType {
   collectionName: 'cookies';
   info: {
@@ -913,6 +981,40 @@ export interface ApiCupcakeCupcake extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::cupcake.cupcake',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFudgyFudgy extends Schema.CollectionType {
+  collectionName: 'fudgies';
+  info: {
+    singularName: 'fudgy';
+    pluralName: 'fudgies';
+    displayName: 'Fudgy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    ingredients: Attribute.Text & Attribute.Required;
+    instructions: Attribute.Text & Attribute.Required;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fudgy.fudgy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::fudgy.fudgy',
       'oneToOne',
       'admin::user'
     > &
@@ -996,8 +1098,11 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::brownie.brownie': ApiBrownieBrownie;
       'api::cake.cake': ApiCakeCake;
+      'api::chocolate.chocolate': ApiChocolateChocolate;
+      'api::coffee.coffee': ApiCoffeeCoffee;
       'api::cookie.cookie': ApiCookieCookie;
       'api::cupcake.cupcake': ApiCupcakeCupcake;
+      'api::fudgy.fudgy': ApiFudgyFudgy;
       'api::hero.hero': ApiHeroHero;
       'api::pastry.pastry': ApiPastryPastry;
     }

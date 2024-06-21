@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fudgies",
+  "info": {
+    "singularName": "fudgy",
+    "pluralName": "fudgies",
+    "displayName": "Fudgy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "ingredients": {
+      "type": "text",
+      "required": true
+    },
+    "instructions": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

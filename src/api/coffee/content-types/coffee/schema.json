@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coffees",
+  "info": {
+    "singularName": "coffee",
+    "pluralName": "coffees",
+    "displayName": "Coffee"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "ingredients": {
+      "type": "text",
+      "required": true
+    },
+    "instructions": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}
