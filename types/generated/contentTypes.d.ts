@@ -821,6 +821,40 @@ export interface ApiAboutAbout extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlog1Blog1 extends Schema.CollectionType {
+  collectionName: 'blog1s';
+  info: {
+    singularName: 'blog1';
+    pluralName: 'blog1s';
+    displayName: 'Blog1';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+      Attribute.Required;
+    text: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog1.blog1',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog1.blog1',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBrownieBrownie extends Schema.CollectionType {
   collectionName: 'brownies';
   info: {
@@ -1164,6 +1198,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about.about': ApiAboutAbout;
+      'api::blog1.blog1': ApiBlog1Blog1;
       'api::brownie.brownie': ApiBrownieBrownie;
       'api::cake.cake': ApiCakeCake;
       'api::chocolate.chocolate': ApiChocolateChocolate;

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog1s",
+  "info": {
+    "singularName": "blog1",
+    "pluralName": "blog1s",
+    "displayName": "Blog1",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
