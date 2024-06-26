@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "abouts",
+  "collectionName": "recipes",
   "info": {
-    "singularName": "about",
-    "pluralName": "abouts",
-    "displayName": "About",
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipe",
     "description": ""
   },
   "options": {
@@ -12,8 +12,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "intro": {
-      "type": "text",
+    "type": {
+      "type": "string",
       "required": true
     },
     "image": {
@@ -26,6 +26,10 @@
         "videos",
         "audios"
       ]
+    },
+    "link": {
+      "type": "string",
+      "required": true
     }
   }
 }
