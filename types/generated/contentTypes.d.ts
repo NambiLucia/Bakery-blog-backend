@@ -801,7 +801,7 @@ export interface ApiAboutAbout extends Schema.CollectionType {
   };
   attributes: {
     intro: Attribute.Text & Attribute.Required;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+    image: Attribute.Media<'images' | 'videos' | 'audios' | 'files', true> &
       Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1128,13 +1128,13 @@ export interface ApiHeroHero extends Schema.CollectionType {
     singularName: 'hero';
     pluralName: 'heroes';
     displayName: 'Hero';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
-      Attribute.Required;
+    image: Attribute.Media<'videos', true> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
